@@ -1,0 +1,17 @@
+{
+  "name": "substitutions",
+  "version": "1.0.0",
+  "description": "An implementation of xkcd \"substitutions\" comics for Twitter",
+  "main": "app.js",
+  "repository": {
+    "url": "https://github.com/BenjaminBini/substitutions.git",
+    "type": "git"
+  },
+  "author": "Benjamin Bini",
+  "license": "MIT",
+  "dependencies": {
+    "console-stamp": "^0.2.4",
+    "dotenv": "^2.0.0",
+    "twit": "^2.2.5"
+  }
+}
