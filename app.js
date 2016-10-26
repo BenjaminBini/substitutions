@@ -22,6 +22,9 @@ const T = new Twit({
 // Initialize stream API
 const stream = T.stream('user');
 
+// We tweet not more than every 5 minutes
+var lastTweetTime = new Date();
+
 // When a tweet is received
 stream.on('tweet', function (tweet) {
     var newTweet = tweet.text;
@@ -39,7 +42,7 @@ stream.on('tweet', function (tweet) {
         console.log('@' + tweet.user.screen_name + ' ' + tweet.text);
         newTweet = '.@' + tweet.user.screen_name + ' ' + newTweet;
         console.log('=> ' + newTweet);
-        if (newTweet.length <= 140) {
+        if (newTweet.length <= 140 && new Date() - lastTweetTime > 1000 * 60 * 5) {
             T.post('statuses/update', {
                 in_reply_to_status_id: tweet.id_str,
                 status: newTweet
@@ -47,6 +50,7 @@ stream.on('tweet', function (tweet) {
                 if (err) {
                     console.dir(err);
                 }
+                lastTweetTime = new Date();
                 console.log('>>> Tweet sent');
                 console.log();
             });
