@@ -53,6 +53,6 @@ stream.on('tweet', function (tweet) {
         } else {
             console.log('Tweet too long (' + newTweet.length + ' characters)');
         }
+        console.log();
     }
-    console.log();
 });
