@@ -4,7 +4,10 @@ This is a Twitter bot implementing XKCD subtitutions comics ([this one](http://x
 
 I used [twit](https://github.com/ttezel/twit) library.
 
-# Installation
+The bot is currently running on an existiong Twitter account : [substitutions_](https://twitter.com/substitutions_).
+*The Twiter app on which the bot is running is currently suspended by Twitter, I am waiting for an answer to my unban request.*
+
+## Installation
 
 Add a `.env` file at the root of the project based on `.env.sample` and add your Twitter API credentials to it.
 
